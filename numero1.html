@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora de área de triângulo</title>
+  </head>
+  <body>
+    <label>Comprimento do lado a: <input id="a-input" type="number"></label><br>
+    <label>Comprimento do lado b: <input id="b-input" type="number"></label><br>
+    <label>Comprimento do lado c: <input id="c-input" type="number"></label><br>
+    <button onclick="calcularArea()">Calcular área</button>
+    <p id="resultado"></p>
+    
+    <script>
+      function calcularArea() {
+        const a = Number(document.getElementById('a-input').value);
+        const b = Number(document.getElementById('b-input').value);
+        const c = Number(document.getElementById('c-input').value);
+
+        if (a <= 0 || b <= 0 || c <= 0) {
+          document.getElementById('resultado').textContent = 'Todos os lados devem ser maiores que zero';
+          return;
+        }
+
+        const s = (a + b + c) / 2;
+        const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        document.getElementById('resultado').textContent = `A área do triângulo é ${area.toFixed(2)} unidades quadradas`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<h1>Formulário</h1>
+	<form id="myForm">
+		<label for="apelido">Apelido:</label>
+		<input type="text" id="apelido" name="apelido" onblur="validarCampo(this)">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome" onblur="validarCampo(this)">
+		<label for="dataNascimento">Data de nascimento:</label>
+		<input type="date" id="dataNascimento" name="dataNascimento" onblur="validarCampo(this)">
+		<label for="provinciaNascimento">Província de nascimento:</label>
+		<select id="provinciaNascimento" name="provinciaNascimento" onchange="validarCampo(this)">
+			<option value="">Selecione</option>
+			<option value="Luanda">Luanda</option>
+			<option value="Benguela">Benguela</option>
+			<option value="Huambo">Huambo</option>
+			<option value="Cabinda">Cabinda</option>
+		</select>
+		<label for="sexo">Sexo:</label>
+		<label for="feminino">Feminino</label>
+		<input type="radio" id="feminino" name="sexo" value="Feminino" onclick="validarCampo(this)">
+		<label for="masculino">Masculino</label>
+		<input type="radio" id="masculino" name="sexo" value="Masculino" onclick="validarCampo(this)">
+		<label for="observacao">Observação:</label>
+		<textarea id="observacao" name="observacao" onblur="validarCampo(this)"></textarea>
+		<button type="submit" onclick="validarFormulario(event)">Enviar</button>
+	</form>
+	<div id="mensagem"></div>
+</body>
+</html>
